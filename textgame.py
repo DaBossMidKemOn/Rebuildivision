@@ -1,11 +1,11 @@
-#Created by Oli McPherson and Ben OSU!
+#Created by Oli MacPherson and Ben O'Sullivan!
 
 import random
 import time
 
 projectlist = ['-A wind tunnel\n','-A weather vane\n','-A wind turbine\n','-Guttering around the roof\n','-A water tank\n','-A garden\n']
 
-def gameintro ():
+def gameIntro ():
   print("It is a cold, dark night, and you sit shivering in your hut in the wilderness...\n")
   time.sleep(2)
   print("The door is blown off it's hinges as a particularly nasty blast of wind strikes your hut. You flinch back involuntarily...\n")
@@ -24,13 +24,18 @@ def gameintro ():
 def listProjects():
     for element in projectlist:
         print(element)
-    
-gameintro()
-
-def projectchooser ():
+        
+def projectChooser ():
   print("The projects available are:\n")
   listProjects()
     
   project1=input('What project should be undertaken?')
+
+def windTunnel ():
+  print("You move over out the front of your house, and consult with the stranger standing there.../n")
+  print("He says that you need certain materials, which he will be happy to provide.../n")
+  print("He says that he has put a stockpile of materials in the shed to the right of your house.../n")
+  print("")
   
-projectchooser()
+gameIntro()
+projectChooser()
