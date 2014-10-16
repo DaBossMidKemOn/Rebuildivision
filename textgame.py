@@ -1,9 +1,9 @@
+#Created by Oli McPherson and Ben OSU!
+
 import random
 import time
 
 projectlist = ['-A wind tunnel\n','-A weather vane\n','-A wind turbine\n','-Guttering around the roof\n','-A water tank\n','-A garden\n']
-
-
 
 def gameintro ():
   print("It is a cold, dark night, and you sit shivering in your hut in the wilderness...\n")
