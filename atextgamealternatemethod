@@ -20,8 +20,27 @@ def intro ():
   time.sleep(2)
   print("Good luck. \n")
   time.sleep(2)
+def correct_answer_rain_1_answer_1 ():
+  print("You get a bucket and place it under the dripping ceiling. Water begins to collect in the bottom of the bucket.")
+  time.sleep(2)
+  extreme_rain_2()
+def incorrect_answer_rain_1_answer_1 ():
+  print("You sit back in your chair, content to let the rain drip. It's only a small leak after all.")
+  time.sleep(2)
+  rain_1_roof_leak_big()
+def other_answer_rain_1_answer_1 ():
+  print("Invalid response. Please type either 'fetch a bucket' or 'let it drip'.")
+  rain_1_answer_function()
 def rain_1_answer_function ():
   rain_1_answer_1 = input("Do you fetch a bucket and catch the water, or do you let it drip?")
+  if rain_1_answer_1.replace(" ", "") == bucket.replace(" ", "")
+    correct_answer_rain_1_answer_1()
+  if rain_1_answer_1.replace(" ", "") == drip.replace(" ", "")
+    incorrect_answer_rain_1_answer_1()
+  if rain_1_answer_1.replace(" ", "") != drip.replace(" ", "") or bucket.replace(" ", ""):
+    other_answer_rain_1_answer_1()
+
+  '''
   if rain_1_answer_1 == bucket:
     print("You get a bucket and place it under the dripping ceiling. Water begins to collect in the bottom of the bucket.")
     time.sleep(2)
@@ -32,7 +51,7 @@ def rain_1_answer_function ():
     rain_1_roof_leak_big()
   elif rain_1_answer_1 != bucket or drip:
     print("Invalid response. Please type either 'fetch a bucket' or 'let it drip'.")
-    rain_1_answer_function()
+    rain_1_answer_function()'''
 def extreme_rain_1 ():
   print("The rain is bucketing down around you. You are sitting at home, snug inside your small, two-room house. The roof begins to leak, just a little. What do you do?")
   rain_1_answer_function()
