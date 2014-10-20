@@ -4,6 +4,7 @@
 
 import random
 import time
+import system
 
 drip=("let it drip")
 bucket=("fetch a bucket")

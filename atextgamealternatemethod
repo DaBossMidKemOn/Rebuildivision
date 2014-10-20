@@ -1,5 +1,5 @@
 #Created by Oli MacPherson and Ben O'Sullivan!
-#For use with only 3 at the moment cause raw_input sucks
+#For use with only Python 3.3 at the moment cause raw_input sucks
 #Define voracious: wanting or devouring great quantities of food. (It's a big complicated word so it looks good in the game,)
 
 import random
@@ -32,10 +32,10 @@ def other_answer_rain_1_answer_1 ():
   print("Invalid response. Please type either 'fetch a bucket' or 'let it drip'.")
   rain_1_answer_function()
 def rain_1_answer_function ():
-  rain_1_answer_1 = input("Do you fetch a bucket and catch the water, or do you let it drip?")
-  if rain_1_answer_1.replace(" ", "") == bucket.replace(" ", "")
+  rain_1_answer_1 = input("Do you fetch a bucket and catch the water, or do you let it drip?").replace(" ","")
+  if rain_1_answer_1.replace(" ", "") == bucket.replace(" ", ""):
     correct_answer_rain_1_answer_1()
-  if rain_1_answer_1.replace(" ", "") == drip.replace(" ", "")
+  if rain_1_answer_1.replace(" ", "") == drip.replace(" ", ""):
     incorrect_answer_rain_1_answer_1()
   if rain_1_answer_1.replace(" ", "") != drip.replace(" ", "") or bucket.replace(" ", ""):
     other_answer_rain_1_answer_1()
