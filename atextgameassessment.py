@@ -5,37 +5,33 @@
 import random
 import time
 
-drip=("let it drip")
-bucket=("fetch a bucket")
-
-
 def intro ():
-  print("The world is changing. \n")
-  time.sleep(2)
-  print("Humanity's voracious appetite for and consumption of electricity born of burning coal and oil is releasing harmful gas into the atmosphere. \n")
-  time.sleep(3)
-  print("You will now experience the effects of this upon the world's climate. \n")
-  time.sleep(2)
-  print("Your objective is to survive for as long as you can. \n")
-  time.sleep(2)
-  print("Good luck. \n")
-  time.sleep(2)
+    print("The world is changing. \n")
+    time.sleep(2)
+    print("Humanity's voracious appetite for and consumption of electricity born of burning coal and oil is releasing harmful gas into the atmosphere. \n")
+    time.sleep(3)
+    print("You will now experience the effects of this upon the world's climate. \n")
+    time.sleep(2)
+    print("Your objective is to survive for as long as you can. \n")
+    time.sleep(2)
+    print("Good luck. \n")
+    time.sleep(2)
 def rain_1_answer_function ():
-  rain_1_answer_1 = input("Do you fetch a bucket and catch the water, or do you let it drip?")
-  if rain_1_answer_1 == bucket:
-    print("You get a bucket and place it under the dripping ceiling. Water begins to collect in the bottom of the bucket.")
-    time.sleep(2)
-    extreme_rain_2()
-  elif rain_1_answer_1 == drip:
-    print("You sit back in your chair, content to let the rain drip. It's only a small leak after all.")
-    time.sleep(2)
-    rain_1_roof_leak_big()
-  elif rain_1_answer_1 != bucket or drip:
-    print("Invalid response. Please type either 'fetch a bucket' or 'let it drip'.")
-    rain_1_answer_function()
+    rain_1_answer_1 = input("Do you fetch a bucket and catch the water, or do you let it drip?").lower()
+    if rain_1_answer_1 == 'fetch a bucket':
+        print("You get a bucket and place it under the dripping ceiling. Water begins to collect in the bottom of the bucket.")
+        time.sleep(2)
+        extreme_rain_2()
+    elif rain_1_answer_1 == 'let it drip':
+        print("You sit back in your chair, content to let the rain drip. It's only a small leak after all.")
+        time.sleep(2)
+        rain_1_roof_leak_big()
+    else:
+        print("Invalid response. Please type either 'fetch a bucket' or 'let it drip'.")
+        rain_1_answer_function()
 def extreme_rain_1 ():
-  print("The rain is bucketing down around you. You are sitting at home, snug inside your small, two-room house. The roof begins to leak, just a little. What do you do?")
-  rain_1_answer_function()
+    print("The rain is bucketing down around you. You are sitting at home, snug inside your small, two-room house. The roof begins to leak, just a little. What do you do?")
+    rain_1_answer_function()
 
     
 #intro()
