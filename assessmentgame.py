@@ -1,6 +1,10 @@
 #Created by Oli MacPherson and Ben O'Sullivan!
-#For use with only Python 3.3 at the moment cause raw_input sucks
+#For use with only Python 2 at the moment cause i cant be bothered changing all the raw_inputs.
 #Define voracious: wanting or devouring great quantities of food. (It's a big complicated word so it looks good in the game,)
+
+#git add -A
+#git commit -m "CC"
+#git push origin master
 
 import random
 import time
@@ -17,8 +21,44 @@ drip="let it drip"
 def intro ():
   for phrase in intro_phrases:
     print(phrase)
-    time.sleep(2)
+    time.sleep(2.5)
 
+def route_choice_1 ():
+  answer_routechoice1 = (raw_input("WHich way do you go?").replace(" ","")).upper()
+  if answer_routechoice1 == "TOTHEOASIS":
+    print("You run towards the glorious sight, splashing water from the bucket in your haste to reach it. Once ou arruive, however, it fades. It was a mirage.")
+    time.sleep(3)
+    print("You gaze at your now empty bucket, then sit, and weep.")
+    print("You die of thirst. You have failed. Your score is 500 points.")
+    sys.exit()
+  if answer_routechoice1 == "TOTHEHOUSE":
+    print("You stroll towards the house, drinking leisurely from the bucket as you do. You have made it to the door when you hear thundering feet behind you. You turn, and see a massive lizard thundering towards you.")
+    time.sleep(4)
+    housedoorchoice()
+  else:
+    print("Invalid answer. Please type either 'To the oasis'' or 'To the house'.")
+def stuck_in_room_2 ():
+  print("It seems you only have a few seconds until the door collapses. Do you leave the house through the back window, or climb through the trapdoor in the ceiling?")
+  answer_stuckinroom = (raw_input().upper()).replace(" ", "")
+  if answer_stuckinroom == "CLIMBTHROUGHTHETRAPDOOR":
+    print("You scramble up to the trapdoor, and climb through. The roof, weakened by the downpour, cannot withstand your weight. You fall, and die in pain.")
+  if answer_stuckinroom == "LEAVETHROUGHTHEWINDOW":
+    print("You leap out of the window.")
+    if bucketYorN == 1:
+      print("The sun is shining down, blinding. The weather has changed significantly. Now, the sun-baked earth is rapidly drying out.")
+      time.sleep(2)
+      print("You walk for miles, unbearably thirsty, and eventually perish from dehydration.")
+      print("You have failed. Your score is 450 points.")
+      sys.exit()
+    else:
+      print("The sun shines down upon you. Suddenly thirsty, you drink from the bucket.")
+      time.sleep(2)
+      print("You begin to walk, and are faced with two routes. In the distance, their looms a beautiful oasis. To the left, however, their is a small house that seems uninhabited.")
+      time.sleep(3)
+      route_choice_1()  
+  else:
+    print("Invalid answer. Please type either 'climb through the trapdoor' or 'leave through the window'.")
+      
 def extreme_rain_2 ():
   print("Your door is blown off it's hinges with the force of the gale, and water pours in the door. Do you stay where you are, or barricade yourself in the other room?")
   extreme_rain_2_answer = (raw_input().replace(" ","")).upper()
@@ -27,16 +67,25 @@ def extreme_rain_2 ():
     time.sleep(2)
     print("You doze off, peacefully.")
     time.sleep(2)
-    print("And wake up, dead, in hell. You have drowned. You have failed. Your score is 400 points.")
+    print("You do not wake up. You have drowned. You have failed. Your score is 400 points.")
     sys.exit()
   if (extreme_rain_2_answer).upper() == ("barricade myself in the other room".replace(" ","")).upper():
     print("You run to the door, and pause. Should you take the bucket?")
     takethebucket = (raw_input()).upper()
     if takethebucket == 'YES':
       print("You grab the bucket, then turn, and rush into the other room, barricading it behind you.")
+      bucketYorN = 0
+      stuck_in_room_2()
+    if takethebucket == "NO":
+      print("You ignore the bucket, and dash into the room.")
+      bucketYorN = 1
+      stuck_in_room_2()
+    else:
+      print("That is not a valid answer. Please type either 'Yes' or 'No'.")
   else:
-    print("That is not a valid answer. Please type either 'stay where I am' or 'barricade myself in the other room'.")
-    extreme_rain_2()
+      print("That is not a valid answer. Please type either 'stay where I am' or 'barricade myself in the other room'.")
+      extreme_rain_2()
+
 def very_thirsty_rain_big_roof_leak ():
   print("You are extremely thirsty. You stumble over to the stream of water dribbling down from the tiles, and drink until your thirst is sated.")
   extreme_rain_2()
@@ -64,6 +113,7 @@ def rain_1_roof_leak_big ():
   else:
     print("Invalid answer. Please type 'Plug the hole with boards', 'Plug the hole with tiles', or 'Leave the hole'.")
     rain_1_roof_leak_big()
+
 def correct_answer_rain_1_answer_1 ():
   print("You get a bucket and place it under the dripping ceiling. Water begins to collect in the bottom of the bucket.")
   time.sleep(2)
