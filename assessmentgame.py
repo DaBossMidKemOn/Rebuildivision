@@ -196,9 +196,9 @@ def very_thirsty_rain_big_roof_leak ():
   
 def rain_1_roof_leak_big ():
   time.sleep(1)
-  print("The leak in the roof gets slowly larger. There are some wooden boards to the side of the room, and some tiles. Do you plug the hole, and if so, with what?")
+  print("The leak in the roof gets slowly larger. There are some wooden boards to the side of the room, and some tiles. Do you plug the hole, and if so, with what? Do you leave the hole (1), plug the hole with boards (2), or plug the hole with tiles (3)?")
   rain_1_roof_leak_big_answer = (raw_input()).upper()
-  if (rain_1_roof_leak_big_answer.replace(" ","")).upper() == ("Plug the hole with boards".replace(" ","")).upper():
+  if (rain_1_roof_leak_big_answer.replace(" ","")).upper() == "1":
     print("You pick up the boards, and nail them in place. The leak stops completely.")
     time.sleep(2)
     print("An hour later, you are unbearable thirsty. You gaze at the empty bucket longingly, and at the plugged hole in the ceiling.")
@@ -207,10 +207,10 @@ def rain_1_roof_leak_big ():
     time.sleep(2)
     print("You stay there until you die of thirst. You have failed. Your score is 350 points.")
     sys.exit(2)
-  if rain_1_roof_leak_big_answer.replace(" ","") == ("Plug the hole with tiles".replace(" ","")).upper():
+  if rain_1_roof_leak_big_answer.replace(" ","") == "2":
     print("You pick up the tiles, and glue them to the roof. Some water still seeps through.")
     very_thirsty_rain_big_roof_leak()
-  if rain_1_roof_leak_big_answer.replace(" ","") == ("Leave the hole".replace(" ","")).upper():
+  if rain_1_roof_leak_big_answer.replace(" ","") == "2":
     time.sleep(1)
     print("The roof, weakened by the downpour and the hole, collapses, crushing you. \n" + "You have failed. Your score is 300 points.")
     sys.exit(2)
@@ -219,12 +219,12 @@ def rain_1_roof_leak_big ():
     rain_1_roof_leak_big()
 
 def rain_1_answer_function ():
-  rainanswer = raw_input("Do you fetch a bucket and catch the water, or do you let it drip?").replace(" ","").upper()
-  if rainanswer == "FETCHABUCKET":
+  rainanswer = raw_input("Do you fetch a bucket and catch the water (1), or do you let it drip(2)?").replace(" ","").upper()
+  if rainanswer == "1":
     print("You get a bucket and place it under the dripping ceiling. Water begins to collect in the bottom of the bucket.")
     time.sleep(2)
     extreme_rain_2()
-  if rainanswer == "LETITDRIP":
+  if rainanswer == "2":
     print("You sit back in your chair, content to let the rain drip. It's only a small leak after all.")
     time.sleep(2)
     rain_1_roof_leak_big()
@@ -236,5 +236,5 @@ def extreme_rain_1 ():
   print("The rain is bucketing down around you. You are sitting at home, snug inside your small, two-room house. The roof begins to leak, just a little. What do you do?")
   rain_1_answer_function()
     
-intro()
+#intro()
 extreme_rain_1()
